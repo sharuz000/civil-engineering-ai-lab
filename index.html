@@ -1,0 +1,72 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A simple concrete volume calculator for Civil Engineering learning.">
+  <title>Concrete Volume Calculator</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="container">
+    <header class="header">
+      <p class="eyebrow">CIVIL ENGINEERING TOOL</p>
+      <h1>Concrete Volume Calculator</h1>
+      <p class="subtitle">
+        Calculate the volume of rectangular concrete elements.
+      </p>
+    </header>
+
+    <section class="calculator">
+      <h2>Enter Dimensions</h2>
+      <p class="hint">Use metres (m) for all dimensions.</p>
+
+      <form id="volumeForm">
+        <div class="field">
+          <label for="length">Length (m)</label>
+          <input id="length" name="length" type="number"
+                 min="0.001" step="any" placeholder="e.g. 5"
+                 required>
+        </div>
+
+        <div class="field">
+          <label for="width">Width (m)</label>
+          <input id="width" name="width" type="number"
+                 min="0.001" step="any" placeholder="e.g. 3"
+                 required>
+        </div>
+
+        <div class="field">
+          <label for="height">Height / Thickness (m)</label>
+          <input id="height" name="height" type="number"
+                 min="0.001" step="any" placeholder="e.g. 0.15"
+                 required>
+        </div>
+
+        <button type="submit" class="calculate-btn">
+          Calculate Volume
+        </button>
+        <button type="reset" class="reset-btn">
+          Clear Values
+        </button>
+      </form>
+
+      <div id="result" class="result" aria-live="polite" hidden>
+        <p class="result-label">Concrete Volume</p>
+        <p id="volumeValue" class="volume-value">0.000 m³</p>
+        <p id="litresValue" class="litres-value">0 litres</p>
+        <p class="formula">V = Length × Width × Height</p>
+      </div>
+
+      <p id="errorMessage" class="error" role="alert"></p>
+    </section>
+
+    <footer>
+      <p>For learning and preliminary estimation only.</p>
+      <p>Verify dimensions and project requirements before use.</p>
+    </footer>
+  </main>
+</body>
+</html>
